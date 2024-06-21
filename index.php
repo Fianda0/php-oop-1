@@ -4,6 +4,12 @@ class Movie
 {
     public $name;
     public $time;
+
+    public function __construct($nome, $durata)
+    {
+        $this->name = $nome;
+        $this->time = $durata;
+    }
 }
 
 ?>
