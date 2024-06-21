@@ -4,17 +4,24 @@ class Movie
 {
     public $name;
     public $time;
+    public $price;
 
-    public function __construct($nome, $durata)
+    public function __construct($nome, $durata, $prezzo)
     {
         $this->name = $nome;
         $this->time = $durata;
+        $this->price = $prezzo;
+    }
+
+    public function description()
+    {
+        return "Il film " . $this->name . " ha una durata di: " . $this->time . ", e il costo è di: " . $this->price . "€";
     }
 }
 
 $movies = [
-    new Movie("interstellar", "02:30"),
-    new Movie("deadpool", "01:45"),
+    new Movie("interstellar", "02:30", 8.30),
+    new Movie("deadpool", "01:45", 4.60),
 ]
 
 ?>
@@ -31,12 +38,11 @@ $movies = [
 
 <body>
     <h1>php-oop-1</h1>
-
-    <?php
-    foreach ($movies as $movie) {
-        echo $movie->name;
-    }
-    ?>
+    <ul>
+        <?php foreach ($movies as $movie) { ?>
+            <li><?= $movie->description() ?></li>
+        <?php } ?>
+    </ul>
 
 </body>
 
