@@ -12,6 +12,11 @@ class Movie
     }
 }
 
+$movies = [
+    new Movie("interstellar", "02:30"),
+    new Movie("deadpool", "01:45"),
+]
+
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +31,12 @@ class Movie
 
 <body>
     <h1>php-oop-1</h1>
+
+    <?php
+    foreach ($movies as $movie) {
+        echo $movie->name;
+    }
+    ?>
 
 </body>
 
